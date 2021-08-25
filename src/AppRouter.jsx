@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Product, NavBar, ProductItem } from "./components";
+import { Product, NavBar, ProductItem, NotFound } from "./components";
 
 const AppRouter = () => {
   return (
@@ -10,6 +10,7 @@ const AppRouter = () => {
         <Routes>
           <Route path="/" element={<Product />} />
           <Route path="/:id" element={<ProductItem />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>
