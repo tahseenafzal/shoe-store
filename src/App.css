@@ -29,3 +29,7 @@ body {
 .shoe-description h4 {
   padding-left: 30px;
 }
+
+a {
+  text-decoration: none;
+}
