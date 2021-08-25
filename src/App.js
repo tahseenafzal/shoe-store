@@ -1,11 +1,10 @@
 import "./App.css";
-import { Product } from "./components";
-import NotFound from "./components/Product/NotFound";
+import AppRouter from "./AppRouter";
 
 function App() {
   return (
     <div>
-      <Product />
+      <AppRouter />
     </div>
   );
 }
