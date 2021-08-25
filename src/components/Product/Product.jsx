@@ -28,7 +28,7 @@ export default function Product() {
           const shoe = Shoes[keyName];
           return (
             <Grid item xs={12} sm={4} key={keyName}>
-              <Link to={`/${keyName}`}>
+              <Link to={`/products/${keyName}`}>
                 <div className="shoe-container">
                   <Card className={classes.card}>
                     <img src={shoe.img} alt={shoe.name} height="150" />

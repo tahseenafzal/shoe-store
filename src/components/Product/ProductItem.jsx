@@ -23,6 +23,11 @@ export default function ProductItem() {
   const { id } = useParams();
   const classes = useStyles();
   const shoeItem = Shoe[id];
+
+  if (!shoeItem) {
+    return <h2>Product Not Found (404)</h2>;
+  }
+
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
