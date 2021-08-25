@@ -1,18 +1,20 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Grid } from "@material-ui/core/";
-import { Autorenew } from "@material-ui/icons";
+import { Grid, Card } from "@material-ui/core/";
+import { Link } from "react-router-dom";
+import Shoes from "./../../shoes.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     maxWidth: "1000px",
-    margin: "auto",
+    margin: "30px auto",
   },
-  paper: {
+  card: {
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    backgroundColor: "#efefef",
   },
 }));
 
@@ -21,19 +23,22 @@ export default function Product() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={1}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>SHOE STORE</Paper>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper className={classes.paper}>xs=12 sm=6</Paper>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper className={classes.paper}>xs=12 sm=6</Paper>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper className={classes.paper}>xs=12 sm=6</Paper>
-        </Grid>
+      <Grid container spacing={2}>
+        {Object.keys(Shoes).map((keyName) => {
+          const shoe = Shoes[keyName];
+          return (
+            <Grid item xs={12} sm={4} key={keyName}>
+              <Link to={`/${keyName}`}>
+                <div className="shoe-container">
+                  <Card className={classes.card}>
+                    <img src={shoe.img} alt={shoe.name} height="150" />
+                  </Card>
+                  <h4>{shoe.name}</h4>
+                </div>
+              </Link>
+            </Grid>
+          );
+        })}
       </Grid>
     </div>
   );
