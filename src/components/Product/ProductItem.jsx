@@ -1,32 +1,40 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper, Grid } from "@material-ui/core/";
-import { Autorenew } from "@material-ui/icons";
+import { Grid, Card } from "@material-ui/core/";
+import Shoe from "./../../shoes.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     maxWidth: "1000px",
-    margin: "auto",
+    margin: "30px auto",
   },
-  paper: {
+  card: {
     padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary,
+    height: "500px",
+    boxSizing: "borderBox",
   },
 }));
 
 export default function ProductItem() {
   const classes = useStyles();
-
+  const shoeItem = Shoe["air-jordan-3-valor-blue"];
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>SHOE STORE</Paper>
+        <Grid item xs={12} sm={6}>
+          <Card className={classes.card}>
+            <img src={shoeItem.img} alt={shoeItem.name} height="100%" />
+          </Card>
         </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper className={classes.paper}>xs=12 sm=6</Paper>
+        <Grid item xs={12} sm={6}>
+          <Card className={`${classes.card} shoe-description`}>
+            <h2>{shoeItem.name}</h2>
+            <h4>Size: {shoeItem.size}</h4>
+            <h4>Color: {shoeItem.color}</h4>
+          </Card>
         </Grid>
       </Grid>
     </div>
