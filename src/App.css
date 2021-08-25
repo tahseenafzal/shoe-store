@@ -1,20 +1,31 @@
 body {
   margin: 0;
   background-color: lightgray;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.nf-container {
-  box-sizing: border-box;
-  height: 90vh;
-  width: 90vw;
-  margin: 0 auto;
-  text-align: center;
+.shoe-container {
+  border: brown solid 1px;
 }
 
-h1 {
+.shoe-container:hover {
+  box-shadow: 0 0 10px gray;
+}
+
+.shoe-container h4 {
   color: brown;
-  box-sizing: border-box;
-  height: 100px;
-  background-color: lightslategrey;
-  padding: 30px;
+  padding-left: 10px;
+}
+
+.shoe-description {
+  text-align: left !important;
+}
+
+.shoe-description h2 {
+  border-bottom: darkblue solid 2px;
+  padding-bottom: 5px;
+}
+
+.shoe-description h4 {
+  padding-left: 30px;
 }
