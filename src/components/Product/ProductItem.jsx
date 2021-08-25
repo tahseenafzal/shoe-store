@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Card } from "@material-ui/core/";
 import Shoe from "./../../shoes.json";
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,8 +20,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ProductItem() {
+  const { id } = useParams();
   const classes = useStyles();
-  const shoeItem = Shoe["air-jordan-3-valor-blue"];
+  const shoeItem = Shoe[id];
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
